@@ -40,7 +40,7 @@ const ImageContainer = styled('a')({
 const StyledFa = styled('img')({
   width: 'auto',
   height: '25px',
-  alignItems: 'center', // Corrected typo
+  alignItems: 'center',
   cursor: 'pointer',
   imageRendering: 'pixelated',
 })
@@ -97,12 +97,12 @@ function Footer() {
     
       <HeaderContainer>
         <LeftContainer>
-          <StyledIcon src='./start.png' />
-          <ImageContainer href="https://www.linkedin.com/in/sean-brown-5a9889270/" target="_blank" rel="noopener noreferrer">
-            <StyledFa src='./linkedin.svg' />
+          <StyledIcon src="./start.png"/>
+          <ImageContainer href='https://i.redd.it/start-button-dont-let-them-take-the-bottom-left-lol-v0-ostbbhrivxq81.png?width=570&format=png&auto=webp&s=602833d9f990389facbc51dd08785d2b390f87b7' target="_blank" rel="noopener noreferrer">
+            <StyledFa src="https://cdn-icons-png.flaticon.com/512/61/61109.png" />
           </ImageContainer>
-          <ImageContainer href="https://github.com/SeanBrown12345" target="_blank" rel="noopener noreferrer">
-            <StyledFa src='./github.svg' />
+          <ImageContainer href='https://github.com/SeanBrown1234' target="_blank" rel="noopener noreferrer">
+            <StyledFa src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"/>
           </ImageContainer>
         </LeftContainer>
         <StyledLabel>Hello... I'm Sean Brown </StyledLabel>
