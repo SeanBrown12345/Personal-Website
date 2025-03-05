@@ -102,7 +102,7 @@ function Footer() {
           <ImageContainer href='https://ca.linkedin.com/in/sean-brown-5a9889270' target="_blank" rel="noopener noreferrer">
             <StyledFa src="https://cdn-icons-png.flaticon.com/512/61/61109.png" />
           </ImageContainer>
-          <ImageContainer href='https://github.com/SeanBrown1234' target="_blank" rel="noopener noreferrer">
+          <ImageContainer href='https://github.com/SeanBrown12345' target="_blank" rel="noopener noreferrer">
             <StyledFa src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"/>
           </ImageContainer>
         </LeftContainer>
