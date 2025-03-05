@@ -1,8 +1,5 @@
 import { styled } from '@mui/material/styles'
 import './App.css'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { useState, useEffect, useCallback } from 'react'
 
 const HeaderContainer = styled('div')({
@@ -40,7 +37,7 @@ const ImageContainer = styled('a')({
   color: '#010081  ',
   imageRendering: 'pixelated',
 })
-const StyledFa = styled(FontAwesomeIcon)({
+const StyledFa = styled('img')({
   width: 'auto',
   height: '25px',
   alignItems: 'center', // Corrected typo
@@ -102,10 +99,10 @@ function Footer() {
         <LeftContainer>
           <StyledIcon src='/start.png' />
           <ImageContainer href="https://www.linkedin.com/in/sean-brown-5a9889270/" target="_blank" rel="noopener noreferrer">
-            <StyledFa icon={faLinkedin} />
+            <StyledFa src='/linkedin.svg' />
           </ImageContainer>
           <ImageContainer href="https://github.com/SeanBrown12345" target="_blank" rel="noopener noreferrer">
-            <StyledFa icon={faGithub} />
+            <StyledFa src='/github.svg' />
           </ImageContainer>
         </LeftContainer>
         <StyledLabel>Hello... I'm Sean Brown </StyledLabel>
