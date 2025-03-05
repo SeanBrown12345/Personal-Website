@@ -97,12 +97,12 @@ function Footer() {
     
       <HeaderContainer>
         <LeftContainer>
-          <StyledIcon src='/start.png' />
+          <StyledIcon src='./start.png' />
           <ImageContainer href="https://www.linkedin.com/in/sean-brown-5a9889270/" target="_blank" rel="noopener noreferrer">
-            <StyledFa src='/linkedin.svg' />
+            <StyledFa src='./linkedin.svg' />
           </ImageContainer>
           <ImageContainer href="https://github.com/SeanBrown12345" target="_blank" rel="noopener noreferrer">
-            <StyledFa src='/github.svg' />
+            <StyledFa src='./github.svg' />
           </ImageContainer>
         </LeftContainer>
         <StyledLabel>Hello... I'm Sean Brown </StyledLabel>
