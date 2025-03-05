@@ -1,0 +1,23 @@
+@font-face {
+    font-family: myFont;
+    src: url(WindowsRegular.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #008080;
+    justify-content: 'space-between';
+    font-family: myFont;
+    background-image: url('/background3.png');
+}
+  #root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
