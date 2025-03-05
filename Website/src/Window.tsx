@@ -10,8 +10,6 @@ const StyledWindow = styled('div')({
     height:'600px',
     width:'900px',
     border: '2px solid gray',
-
-    
 })
 
 const HeaderTab = styled('div')({
@@ -22,19 +20,16 @@ const HeaderTab = styled('div')({
     height:'30px',
     width:'100%',
     justifyContent: 'space-between',
+})
 
-      
-  })
-
-  const StyledLabel = styled('div')({
+const StyledLabel = styled('div')({
     fontSize: '16px', 
     textAlign: 'center', 
     color: 'white',
     padding: '2px',
+}) 
 
-  }) 
-
-  const StyledButton = styled('button')({
+const StyledButton = styled('button')({
     fontWeight: 700,
     letterSpacing: '0.05em',
     padding: '0.45em 0.75em',
@@ -55,15 +50,14 @@ const HeaderTab = styled('div')({
         borderLeft: '2px solid #404040',
         borderTop: '2px solid #404040',
     },
+})
 
-  })
-
-  const StyledIcon = styled('img')({
+const StyledIcon = styled('img')({
     width: '15px',
     height: '15px',
-  })
+})
 
-  const LeftContainer = styled('div')({
+const LeftContainer = styled('div')({
     display: 'flex',    
     flexDirection: 'row',
     alignItems: 'center',
@@ -75,15 +69,13 @@ interface WindowProps {
     label: string;
     image: string;
     closeWindow: () => void;
+    handleRef: React.RefObject<HTMLDivElement | null>;
 }
 
-
-
-function Window({ label, image, closeWindow}: WindowProps) {
+function Window({ label, image, closeWindow, handleRef }: WindowProps) {
   return ( 
-    
       <StyledWindow>
-        <HeaderTab>
+        <HeaderTab ref={handleRef}>
             <LeftContainer>
                 <StyledIcon src={image}/>
                 <StyledLabel>{label}</StyledLabel>

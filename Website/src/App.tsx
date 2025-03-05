@@ -3,8 +3,9 @@ import Footer from './Footer'
 import { styled } from '@mui/material/styles'
 import Window from './Window'
 import { useState } from 'react'
-
-
+import useDraggable from './useDraggable'
+import useDraggable2 from './useDraggableTwo'
+import useDraggableThree from './useDraggableThree'
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',
@@ -48,27 +49,42 @@ const CenteredWindowContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  
 })
 
-
-
 function App() {
-  const [openWindow, setOpenWindow] = useState(false);
   const [windowLabel, setWindowLabel] = useState('');
-  const [windowImage, setWindowImage] = useState('');
+  const [projectWindow, setProjectWindow] = useState(false);
+  const [resumeWindow, setResumeWindow] = useState(false);
+  const [aboutWindow, setAboutWindow] = useState(false);
+  
 
   const openWindowHandler = (label: string, image: string) => {
     setWindowLabel(label);
-    setWindowImage(image);
-    setOpenWindow(true);  
+    if(label === 'Projects'){
+      setProjectWindow(true);
+    }
+    if(label === 'Resume'){
+      setResumeWindow(true);
+    }
+    if(label === 'About'){
+      setAboutWindow(true);
+    }
   }
 
-  const closeWindowHandler = () => {
-    setOpenWindow(false);
-    setWindowLabel('');
+  const closeProjectsHandler = () => {
+    setProjectWindow(false);
+  }
+  const closeResumeHandler = () => {
+    setResumeWindow(false);
+  }
+  const closeAboutHandler = () => {
+    setAboutWindow(false);
   }
 
+  const { position, handleRef } = useDraggable();
+  const { position2, handleRef2 } = useDraggable2();
+  const { position3, handleRef3 } = useDraggableThree();
+  
   return ( 
     <>
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
@@ -87,9 +103,40 @@ function App() {
           <StyledLabel>About</StyledLabel>
         </IconContainer>
         <CenteredWindowContainer>
-          {openWindow && <Window label={windowLabel} image={windowImage} closeWindow={closeWindowHandler} />}
+          {projectWindow && (
+            <div
+              style={{
+                position: 'absolute',
+                left: `${position.x}px`,
+                top: `${position.y}px`,
+              }}
+            >
+              {handleRef ? <Window label={'Projects'} image={"https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"} closeWindow={closeProjectsHandler} handleRef={handleRef} /> : null}
+            </div>
+          )}
+          {resumeWindow && (
+            <div
+              style={{
+                position: 'absolute',
+                left: `${position2.x}px`,
+                top: `${position2.y}px`,
+              }}
+            >
+              {handleRef2 ? <Window label={'Resume'} image={"https://win98icons.alexmeub.com/icons/png/notepad-5.png"} closeWindow={closeResumeHandler} handleRef={handleRef2} /> : null}
+            </div>
+          )}
+          {aboutWindow && (
+            <div
+              style={{
+                position: 'absolute',
+                left: `${position3.x}px`,
+                top: `${position3.y}px`,
+              }}
+            >
+              {handleRef ? <Window label={'About'} image={"https://win98icons.alexmeub.com/icons/png/msagent-3.png"} closeWindow={closeAboutHandler} handleRef={handleRef3} /> : null}
+            </div>
+          )}
         </CenteredWindowContainer>
-      
       </ApplicationContainer>
       <Footer/>
     </>
