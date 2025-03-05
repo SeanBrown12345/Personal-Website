@@ -56,18 +56,25 @@ function App() {
   const [projectWindow, setProjectWindow] = useState(false);
   const [resumeWindow, setResumeWindow] = useState(false);
   const [aboutWindow, setAboutWindow] = useState(false);
-  
+  const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1 });
+  const [highestZIndex, setHighestZIndex] = useState(1);
 
   const openWindowHandler = (label: string) => {
     setWindowLabel(label);
     if(label === 'Projects'){
       setProjectWindow(true);
+      setHighestZIndex(highestZIndex + 1);
+      setZIndex({ ...zIndex, projects: highestZIndex + 1 });
     }
     if(label === 'Resume'){
       setResumeWindow(true);
+      setHighestZIndex(highestZIndex + 1);
+      setZIndex({ ...zIndex, resume: highestZIndex + 1 });
     }
     if(label === 'About'){
       setAboutWindow(true);
+      setHighestZIndex(highestZIndex + 1);
+      setZIndex({ ...zIndex, about: highestZIndex + 1 });
     }
   }
 
@@ -109,6 +116,11 @@ function App() {
                 position: 'absolute',
                 left: `${position.x}px`,
                 top: `${position.y}px`,
+                zIndex: zIndex.projects,
+              }}
+              onMouseDown={() => {
+                setHighestZIndex(highestZIndex + 1);
+                setZIndex({ ...zIndex, projects: highestZIndex + 1 });
               }}
             >
               {handleRef ? <Window label={'Projects'} image={"https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"} closeWindow={closeProjectsHandler} handleRef={handleRef} /> : null}
@@ -120,6 +132,11 @@ function App() {
                 position: 'absolute',
                 left: `${position2.x}px`,
                 top: `${position2.y}px`,
+                zIndex: zIndex.resume,
+              }}
+              onMouseDown={() => {
+                setHighestZIndex(highestZIndex + 1);
+                setZIndex({ ...zIndex, resume: highestZIndex + 1 });
               }}
             >
               {handleRef2 ? <Window label={'Resume'} image={"https://win98icons.alexmeub.com/icons/png/notepad-5.png"} closeWindow={closeResumeHandler} handleRef={handleRef2} /> : null}
@@ -131,6 +148,11 @@ function App() {
                 position: 'absolute',
                 left: `${position3.x}px`,
                 top: `${position3.y}px`,
+                zIndex: zIndex.about,
+              }}
+              onMouseDown={() => {
+                setHighestZIndex(highestZIndex + 1);
+                setZIndex({ ...zIndex, about: highestZIndex + 1 });
               }}
             >
               {handleRef ? <Window label={'About'} image={"https://win98icons.alexmeub.com/icons/png/msagent-3.png"} closeWindow={closeAboutHandler} handleRef={handleRef3} /> : null}
