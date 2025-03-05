@@ -51,7 +51,7 @@ function About() {
         
         <TopContainer>
             <StyledTitle>About Me, Sean brown</StyledTitle>
-            <StyledIcon src='\portrait.png'/>
+            <StyledIcon src='\public\portrait.png'/>
             <div>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis egestas eros. Vivamus eget nisi convallis orci porttitor pharetra non ut tellus. Donec luctus vel turpis sed malesuada. Etiam accumsan velit non purus lobortis malesuada. Sed posuere odio at turpis efficitur congue. Aliquam eu pharetra quam. Morbi euismod, nisl eget aliquet dapibus, leo mi laoreet velit, sit amet luctus sem dui id velit. Mauris convallis finibus sem, et vulputate magna auctor ac. Nunc risus erat, auctor nec faucibus in, faucibus sed lorem. Sed interdum aliquam ultricies. Nullam eleifend turpis ligula, non auctor mauris faucibus scelerisque. Ut non velit a augue porttitor consectetur.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis egestas eros. Vivamus eget nisi convallis orci porttitor pharetra non ut tellus. Donec luctus vel turpis sed malesuada. Etiam accumsan velit non purus lobortis malesuada. Sed posuere odio at turpis efficitur congue. Aliquam eu pharetra quam. Morbi euismod, nisl eget aliquet dapibus, leo mi laoreet velit, sit amet luctus sem dui id velit. Mauris convallis finibus sem, et vulputate magna auctor ac. Nunc risus erat, auctor nec faucibus in, faucibus sed lorem. Sed interdum aliquam ultricies. Nullam eleifend turpis ligula, non auctor mauris faucibus scelerisque. Ut non velit a augue porttitor consectetur.
