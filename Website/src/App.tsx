@@ -78,6 +78,7 @@ function App() {
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"/>
           <StyledLabel>Projects</StyledLabel>
         </IconContainer>
+        <StyledIcon src="\portrait.png"/>
         <IconContainer isActive={'Resume' == windowLabel} onClick={() => openWindowHandler('Resume', 'https://win98icons.alexmeub.com/icons/png/notepad-5.png')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/notepad-5.png"/>
           <StyledLabel>Resume</StyledLabel>
