@@ -58,7 +58,7 @@ function App() {
   const [aboutWindow, setAboutWindow] = useState(false);
   
 
-  const openWindowHandler = (label: string, image: string) => {
+  const openWindowHandler = (label: string) => {
     setWindowLabel(label);
     if(label === 'Projects'){
       setProjectWindow(true);
@@ -90,15 +90,15 @@ function App() {
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
       
       <ApplicationContainer>
-        <IconContainer isActive={'Projects' == windowLabel} onClick={() => openWindowHandler('Projects', 'https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png')}>
+        <IconContainer isActive={'Projects' == windowLabel} onClick={() => openWindowHandler('Projects')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"/>
           <StyledLabel>Projects</StyledLabel>
         </IconContainer>
-        <IconContainer isActive={'Resume' == windowLabel} onClick={() => openWindowHandler('Resume', 'https://win98icons.alexmeub.com/icons/png/notepad-5.png')}>
+        <IconContainer isActive={'Resume' == windowLabel} onClick={() => openWindowHandler('Resume')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/notepad-5.png"/>
           <StyledLabel>Resume</StyledLabel>
         </IconContainer>
-        <IconContainer isActive={'About' == windowLabel} onClick={() => openWindowHandler('About', 'https://win98icons.alexmeub.com/icons/png/msagent-3.png')}>
+        <IconContainer isActive={'About' == windowLabel} onClick={() => openWindowHandler('About')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/msagent-3.png"/>
           <StyledLabel>About</StyledLabel>
         </IconContainer>
