@@ -44,7 +44,6 @@ const ApplicationContainer = styled('div')({
   gap: '50px',
   flexGrow: 1,
   padding: '20px',
-  overflow: 'hidden',
 })
 const CenteredWindowContainer = styled('div')({
   display: 'flex',

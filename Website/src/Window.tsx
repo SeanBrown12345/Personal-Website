@@ -13,7 +13,7 @@ const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowPr
     alignItems: 'center',
     backgroundColor: '#c3c3c3',
     height: 'fit-content',
-    width: label === 'Resume' ? '900px' : label === 'About' ? '700px' : '500px',
+    width: label === 'Resume' ? '920px' : label === 'About' ? '700px' : '500px',
     border: '2px solid gray',
 }));
 
