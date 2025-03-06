@@ -44,6 +44,7 @@ const ApplicationContainer = styled('div')({
   gap: '50px',
   flexGrow: 1,
   padding: '20px',
+  overflow: 'hidden',
 })
 const CenteredWindowContainer = styled('div')({
   display: 'flex',
@@ -52,7 +53,6 @@ const CenteredWindowContainer = styled('div')({
 })
 
 function App() {
-  const [windowLabel, setWindowLabel] = useState('');
   const [projectWindow, setProjectWindow] = useState(false);
   const [resumeWindow, setResumeWindow] = useState(false);
   const [aboutWindow, setAboutWindow] = useState(false);
@@ -60,7 +60,6 @@ function App() {
   const [highestZIndex, setHighestZIndex] = useState(1);
 
   const openWindowHandler = (label: string) => {
-    setWindowLabel(label);
     if(label === 'Projects'){
       setProjectWindow(true);
       setHighestZIndex(highestZIndex + 1);
@@ -97,15 +96,15 @@ function App() {
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
       
       <ApplicationContainer>
-        <IconContainer isActive={'Projects' == windowLabel} onClick={() => openWindowHandler('Projects')}>
+        <IconContainer isActive={projectWindow} onClick={() => openWindowHandler('Projects')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"/>
           <StyledLabel>Projects</StyledLabel>
         </IconContainer>
-        <IconContainer isActive={'Resume' == windowLabel} onClick={() => openWindowHandler('Resume')}>
+        <IconContainer isActive={resumeWindow} onClick={() => openWindowHandler('Resume')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/notepad-5.png"/>
           <StyledLabel>Resume</StyledLabel>
         </IconContainer>
-        <IconContainer isActive={'About' == windowLabel} onClick={() => openWindowHandler('About')}>
+        <IconContainer isActive={aboutWindow} onClick={() => openWindowHandler('About')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/msagent-3.png"/>
           <StyledLabel>About</StyledLabel>
         </IconContainer>
@@ -160,7 +159,10 @@ function App() {
           )}
         </CenteredWindowContainer>
       </ApplicationContainer>
-      <Footer/>
+      <div style={{zIndex: highestZIndex + 2}}>
+        <Footer/>
+      </div>
+      
     </>
   )
 }

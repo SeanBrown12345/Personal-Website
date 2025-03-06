@@ -16,8 +16,8 @@ const WindowContainer = styled('div')({
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
-    overflow: 'auto',
     backgroundColor: '#7a7b7d',
+    height: 'fit-content', // Adjust height as needed
 })
 
 const TopContainer = styled('div')({
@@ -27,9 +27,10 @@ const TopContainer = styled('div')({
     gap: '10px',
     display: 'block',
     backgroundColor: '#c3c3c3',
-    height: 'fit-content',
     padding: '10px',
-    border: '2px solid #000', // Add a solid border
+    border: '2px ridge #000', 
+    height: '600px',
+    overflow: 'auto',
 })
 
 const StyledTitle = styled('h1')({

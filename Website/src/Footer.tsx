@@ -25,14 +25,16 @@ const StyledIcon = styled('img')({
 const ImageContainer = styled('a')({
   display: 'flex',
   flexDirection: 'row',
-  marginLeft: '20px',
+  marginLeft: '3px',
   alignItems: 'center',
   height: '100%',
   padding: '5px',
-  border: '1px solid transparent',
+  boxShadow: 'outset 2px 3px grey',
+  border: '2px outset black',
+  
   '&:hover': {
-    boxShadow: 'inset 1px 1px grey',
-    border: '1px solid gray',
+    boxShadow: 'inset 2px 2px grey',
+    border: '2px solid gray',
   },
   color: '#010081  ',
   imageRendering: 'pixelated',
@@ -71,6 +73,15 @@ const TimeLabel = styled('div')({
   fontSize: '16px',
 })
 
+const Seperator = styled('div')({
+  width: '2px',
+  height: '25px',
+  backgroundColor: 'black',
+  border: '1px solid grey',
+  boxShadow: 'inset 1px 1px grey',
+  marginLeft: '10px',
+})
+
 function Footer() {
   const [currentTime, setCurrentTime] = useState('12:52 p.m.');
 
@@ -99,6 +110,7 @@ function Footer() {
         <LeftContainer>
           
           <StyledIcon src="https://i.redd.it/start-button-dont-let-them-take-the-bottom-left-lol-v0-ostbbhrivxq81.png?width=570&format=png&auto=webp&s=602833d9f990389facbc51dd08785d2b390f87b7"/>
+          <Seperator />
           <ImageContainer href='https://ca.linkedin.com/in/sean-brown-5a9889270' target="_blank" rel="noopener noreferrer">
             <StyledFa src="https://cdn-icons-png.flaticon.com/512/61/61109.png" />
           </ImageContainer>

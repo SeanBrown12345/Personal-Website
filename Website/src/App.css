@@ -15,6 +15,7 @@ body {
     justify-content: 'space-between';
     font-family: myFont;
     background-image: url('/background3.png');
+    overflow: hidden;
 }
   #root {
     display: flex;

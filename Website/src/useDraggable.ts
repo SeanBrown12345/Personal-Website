@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useDraggable = () => {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 50, y: 50 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const handleRef = useRef<HTMLDivElement | null>(null);
@@ -18,9 +18,15 @@ const useDraggable = () => {
 
   const onMouseMove = useCallback((e: MouseEvent) => {
     if (isDragging) {
+      const { innerWidth, innerHeight } = window;
+      const { offsetWidth, offsetHeight } = handleRef.current || { offsetWidth: 0, offsetHeight: 0 };
+
+      const newX = Math.max(0, Math.min(e.clientX - offset.x, innerWidth - offsetWidth));
+      const newY = Math.max(0, Math.min(e.clientY - offset.y, innerHeight - offsetHeight));
+
       setPosition({
-        x: e.clientX - offset.x,
-        y: e.clientY - offset.y,
+        x: newX,
+        y: newY,
       });
     }
   }, [isDragging, offset]);

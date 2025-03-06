@@ -1,16 +1,21 @@
 import './App.css'
 import { styled } from '@mui/material/styles'
 import About from './About'
+import Resume from './Resume'
+import Projects from './Projects';
 
-const StyledWindow = styled('div')({
+interface StyledWindowProps {
+    label: string;
+}
+const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowProps) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#c3c3c3 ',
-    height:'600px',
-    width:'900px',
+    backgroundColor: '#c3c3c3',
+    height: 'fit-content',
+    width: label === 'Resume' ? '900px' : label === 'About' ? '700px' : '500px',
     border: '2px solid gray',
-})
+}));
 
 const HeaderTab = styled('div')({
     display: 'flex',
@@ -74,7 +79,7 @@ interface WindowProps {
 
 function Window({ label, image, closeWindow, handleRef }: WindowProps) {
   return ( 
-      <StyledWindow>
+      <StyledWindow label={label}>
         <HeaderTab ref={handleRef}>
             <LeftContainer>
                 <StyledIcon src={image}/>
@@ -86,6 +91,8 @@ function Window({ label, image, closeWindow, handleRef }: WindowProps) {
             </StyledButton>
         </HeaderTab>
         {label === 'About' ? <About/> : null}
+        {label === 'Resume' ? <Resume/> : null}
+        {label === 'Projects' ? <Projects/> : null}
       </StyledWindow>
   )
 }

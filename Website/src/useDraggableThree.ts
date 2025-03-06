@@ -1,7 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useDraggableThree = () => {
-  const [position3, setPosition] = useState({ x: 0, y: 0 });
+  const [position3, setPosition] = useState({ x: 70, y: 70 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const handleRef3 = useRef<HTMLDivElement | null>(null);
