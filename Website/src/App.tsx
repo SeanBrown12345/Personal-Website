@@ -6,6 +6,7 @@ import { useState } from 'react'
 import useDraggable from './useDraggable'
 import useDraggable2 from './useDraggableTwo'
 import useDraggableThree from './useDraggableThree'
+import useDraggableFour from './useDraggableFour'
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',
@@ -55,6 +56,7 @@ function App() {
   const [projectWindow, setProjectWindow] = useState(false);
   const [resumeWindow, setResumeWindow] = useState(false);
   const [aboutWindow, setAboutWindow] = useState(false);
+  const [contactWindow, setContactWindow] = useState(false);
   const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1 });
   const [highestZIndex, setHighestZIndex] = useState(1);
 
@@ -74,6 +76,11 @@ function App() {
       setHighestZIndex(highestZIndex + 1);
       setZIndex({ ...zIndex, about: highestZIndex + 1 });
     }
+    if(label === 'Contact'){
+      setContactWindow(true);
+      setHighestZIndex(highestZIndex + 1);
+      setZIndex({ ...zIndex, about: highestZIndex + 1 });
+    }
   }
 
   const closeProjectsHandler = () => {
@@ -85,10 +92,14 @@ function App() {
   const closeAboutHandler = () => {
     setAboutWindow(false);
   }
+  const closeContactHandler = () => {
+    setContactWindow(false);
+  }
 
   const { position, handleRef } = useDraggable();
   const { position2, handleRef2 } = useDraggable2();
   const { position3, handleRef3 } = useDraggableThree();
+  const { position4, handleRef4 } = useDraggableFour();
   
   return ( 
     <>
@@ -106,6 +117,10 @@ function App() {
         <IconContainer isActive={aboutWindow} onClick={() => openWindowHandler('About')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/msagent-3.png"/>
           <StyledLabel>About</StyledLabel>
+        </IconContainer>
+        <IconContainer isActive={contactWindow} onClick={() => openWindowHandler('Contact')}>
+          <StyledIcon src="https://win98icons.alexmeub.com/icons/png/modem-2.png"/>
+          <StyledLabel>Contact</StyledLabel>
         </IconContainer>
         <CenteredWindowContainer>
           {projectWindow && (
@@ -154,6 +169,22 @@ function App() {
               }}
             >
               {handleRef ? <Window label={'About'} image={"https://win98icons.alexmeub.com/icons/png/msagent-3.png"} closeWindow={closeAboutHandler} handleRef={handleRef3} /> : null}
+            </div>
+          )}
+          {contactWindow && (
+            <div
+              style={{
+                position: 'absolute',
+                left: `${position4.x}px`,
+                top: `${position4.y}px`,
+                zIndex: zIndex.about,
+              }}
+              onMouseDown={() => {
+                setHighestZIndex(highestZIndex + 1);
+                setZIndex({ ...zIndex, about: highestZIndex + 1 });
+              }}
+            >
+              {handleRef ? <Window label={'Contact'} image={"https://win98icons.alexmeub.com/icons/png/modem-2.png"} closeWindow={closeContactHandler} handleRef={handleRef4} /> : null}
             </div>
           )}
         </CenteredWindowContainer>

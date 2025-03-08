@@ -15,6 +15,7 @@ const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowPr
     height: 'fit-content',
     width: label === 'Resume' ? '920px' : label === 'About' ? '700px' : '500px',
     border: '2px solid gray',
+
 }));
 
 const HeaderTab = styled('div')({
@@ -25,6 +26,12 @@ const HeaderTab = styled('div')({
     height:'30px',
     width:'100%',
     justifyContent: 'space-between',
+    border: '2px solid transparent',
+    '&:hover': {
+        border: '2px solid #5b5d61',
+    },
+    cursor: 'pointer',
+    
 })
 
 const StyledLabel = styled('div')({
