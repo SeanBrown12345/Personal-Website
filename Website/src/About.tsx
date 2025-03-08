@@ -33,12 +33,6 @@ const TopContainer = styled('div')({
     overflow: 'auto',
 })
 
-const StyledTitle = styled('h1')({
-    fontSize: '24px',
-    textAlign: 'center',
-    color: 'black',
-
-})
 const StyledHeader = styled('div')({
   fontSize: '20px',
   color: 'black',
