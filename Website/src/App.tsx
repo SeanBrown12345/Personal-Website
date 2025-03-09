@@ -57,7 +57,7 @@ function App() {
   const [resumeWindow, setResumeWindow] = useState(false);
   const [aboutWindow, setAboutWindow] = useState(false);
   const [contactWindow, setContactWindow] = useState(false);
-  const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1 });
+  const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1, contact: 1 });
   const [highestZIndex, setHighestZIndex] = useState(1);
 
   const openWindowHandler = (label: string) => {
@@ -177,11 +177,11 @@ function App() {
                 position: 'absolute',
                 left: `${position4.x}px`,
                 top: `${position4.y}px`,
-                zIndex: zIndex.about,
+                zIndex: zIndex.contact,
               }}
               onMouseDown={() => {
                 setHighestZIndex(highestZIndex + 1);
-                setZIndex({ ...zIndex, about: highestZIndex + 1 });
+                setZIndex({ ...zIndex, contact: highestZIndex + 1 });
               }}
             >
               {handleRef ? <Window label={'Contact'} image={"https://win98icons.alexmeub.com/icons/png/modem-2.png"} closeWindow={closeContactHandler} handleRef={handleRef4} /> : null}

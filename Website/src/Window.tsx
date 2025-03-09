@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles'
 import About from './About'
 import Resume from './Resume'
 import Projects from './Projects';
+import Contact from './Contact';
 
 interface StyledWindowProps {
     label: string;
@@ -13,8 +14,9 @@ const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowPr
     alignItems: 'center',
     backgroundColor: '#c3c3c3',
     height: 'fit-content',
-    width: label === 'Resume' ? '920px' : label === 'About' ? '700px' : '500px',
+    width: label === 'Resume' ? '920px' : label === 'About' ? '700px' : label === 'Contact' ? '600px' : '500px',
     border: '2px solid gray',
+    fontFamily: 'Courier New, monospace',
 
 }));
 
@@ -100,6 +102,7 @@ function Window({ label, image, closeWindow, handleRef }: WindowProps) {
         {label === 'About' ? <About/> : null}
         {label === 'Resume' ? <Resume/> : null}
         {label === 'Projects' ? <Projects/> : null}
+        {label === 'Contact' ? <Contact/> : null}
       </StyledWindow>
   )
 }

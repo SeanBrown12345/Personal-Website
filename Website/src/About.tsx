@@ -54,6 +54,7 @@ const SkillContainer = styled('div')({
   gap: '5px',
   marginTop: '10px',
   width: '100%',
+  overflow: 'revert',
 })
 
 const SkillsLabel = styled('div')({
@@ -66,11 +67,7 @@ const SkillsLabel = styled('div')({
 
 
 
-
-
 function About() {
-
-
   return ( 
     <>
       <WindowContainer>
@@ -116,7 +113,7 @@ function About() {
             <div> 
                 Developing ERP systems with technologies such as React, GraphQL, and GoLang. 
             </div>
-            <a style={{fontWeight: 'lighter'}}> Feb 2025 - Sept 2025 </a>
+            <a style={{color: 'lighter'}}> Feb 2025 - Sept 2025 </a>
           </ContentContainer>
           <ContentContainer>
             <div style={{fontWeight: 'bold'}}> 
@@ -124,7 +121,7 @@ function About() {
             </div>
             
             <div> 
-                Sourced and manipulated data to present it in a meaningful way to users. 
+                Sourced and manipulated data to present it in a meaningful way to users.
             </div>
             <a style={{fontWeight: 'lighter'}}> May 2023 - December 2023 </a>
           </ContentContainer>
@@ -139,11 +136,28 @@ function About() {
             <a style={{fontWeight: 'lighter'}}> May 2024 - December 2024 </a>
           </ContentContainer>
           <StyledHeader>Skills</StyledHeader>
-          <SkillContainer>
-            
+          <SkillContainer>   
           <SkillsLabel>React</SkillsLabel><SkillsLabel>Python</SkillsLabel><SkillsLabel>Java</SkillsLabel><SkillsLabel>C++</SkillsLabel><SkillsLabel>C</SkillsLabel><SkillsLabel>SQL</SkillsLabel>
-          <SkillsLabel>Rust</SkillsLabel><SkillsLabel>Haskell</SkillsLabel><SkillsLabel>Git</SkillsLabel><SkillsLabel>GoLang</SkillsLabel><SkillsLabel>Javascript</SkillsLabel><SkillsLabel>Typescript</SkillsLabel>
+          <SkillsLabel>Rust</SkillsLabel><SkillsLabel>Haskell</SkillsLabel><SkillsLabel>Git</SkillsLabel><SkillsLabel>GoLang</SkillsLabel><SkillsLabel>Javascript</SkillsLabel>
           </SkillContainer>
+          <SkillContainer>   
+          <SkillsLabel>Typescript</SkillsLabel><SkillsLabel>MatLab</SkillsLabel><SkillsLabel>HTML</SkillsLabel>
+          </SkillContainer>
+
+          <StyledHeader>More About Me</StyledHeader>
+          
+          <div style={{fontWeight: 'bold', marginTop: '10px'}}>Some of my hobbies and interests outside of Tech include:</div>
+          <div style={{marginLeft: '20px', marginTop: '5px',}}>
+          <li>Playing and writing music. I have loved music since I was a kid and one of my favourite things to do is jam out with some friends.</li>
+            <li>Sports and fitness. I like to live an active lifestyle. In the winter you'll find me hitttin the slopes and in the summer I'm usually out hiking or golfing.</li>
+            <li>Movies and tv shows. I am overall just a huge movie nerd and love to geek out over cinema.</li>
+ 
+          </div>
+          
+            
+            
+          
+          
           
           
         </TopContainer>
