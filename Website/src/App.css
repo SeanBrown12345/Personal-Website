@@ -16,6 +16,7 @@ body {
     font-family: myFont;
     background-image: url('/background3.png');
     overflow: hidden;
+    justify-content: space-between;
 }
   #root {
     display: flex;

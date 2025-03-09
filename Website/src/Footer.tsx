@@ -7,7 +7,6 @@ const HeaderContainer = styled('div')({
   flexDirection: 'row',
   height: '35px', 
   backgroundColor: '#c3c3c3',
-  marginTop: 'auto', 
   boxShadow: 'inset 1px 1px 1px 0 rgba(255,255,255,0.5), inset -1px -1px 1px 0 rgba(0,0,0,0.5)',
   padding: '3px',
   alignItems: 'center',
@@ -53,16 +52,17 @@ const LeftContainer = styled('div')({
   alignItems: 'center',
 })
 
-const StyledLabel = styled('div')({
-  float: 'left',
-  borderTop: '1px solid #000',
-  borderLeft: '1px solid #000',
-  boxShadow: 'inset 1px 1px grey',
-  backgroundImage: 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2M8cODAf3t7ewbG/////z948CADAFuqCj64BtLKAAAAAElFTkSuQmCC)',
-  padding: '0px 90px',
-  fontSize: '25px',
-  fontWeight: 'bold',
-})
+const StyledLabel = styled("div")<{windowWidth : number}>(({windowWidth }) => ({
+  float: "left",
+  borderTop: "1px solid #000",
+  borderLeft: "1px solid #000",
+  boxShadow: "inset 1px 1px grey",
+  backgroundImage:
+    "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2M8cODAf3t7ewbG/////z948CADAFuqCj64BtLKAAAAAElFTkSuQmCC)",
+  padding: windowWidth < 1100 ? "0px 3.5vw" : "0px 90px",
+  fontSize: windowWidth < 1100 ? "3.5vw" : "25px",
+  fontWeight: "bold",
+}));
 
 const TimeLabel = styled('div')({
   textAlign: 'center', 
@@ -83,6 +83,15 @@ const Seperator = styled('div')({
 })
 
 function Footer() {
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const [currentTime, setCurrentTime] = useState('12:52 p.m.');
 
 
@@ -123,7 +132,7 @@ function Footer() {
             <StyledFa src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"/>
           </ImageContainer>
         </LeftContainer>
-        <StyledLabel>Hello... I'm Sean Brown </StyledLabel>
+        <StyledLabel windowWidth={windowWidth}>Hello... I'm Sean Brown </StyledLabel>
         <TimeLabel>{currentTime}</TimeLabel>
       </HeaderContainer>
 
