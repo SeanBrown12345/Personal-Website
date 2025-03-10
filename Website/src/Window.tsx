@@ -8,17 +8,31 @@ import Contact from './Contact';
 interface StyledWindowProps {
     label: string;
 }
-const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowProps) => ({
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: '#c3c3c3',
-    height: 'fit-content',
-    width: label === 'Resume' ? '920px' : label === 'About' ? '700px' : label === 'Contact' ? '600px' : '500px',
-    border: '2px solid gray',
-    fontFamily: 'Courier New, monospace',
-
-}));
+const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowProps) => {
+    const getMaxWidth = () => {
+      switch (label) {
+        case 'Resume':
+          return '920px';
+        case 'About':
+          return '700px';
+        case 'Contact':
+          return '600px';
+        default:
+          return '500px';
+      }
+    };
+  
+    return {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: '#c3c3c3',
+      height: 'fit-content',
+      width: `clamp(300px, 100vw, ${getMaxWidth()})`,
+      border: '2px solid gray',
+      fontFamily: 'Courier New, monospace',
+    };
+  });
 
 const HeaderTab = styled('div')({
     display: 'flex',

@@ -10,7 +10,6 @@ const WindowContainer = styled('div')({
 })
 
 const TopContainer = styled('div')({
-    width: '570px',
     flexDirection: 'column',
     alignContent: 'center',
     backgroundColor: '#fafafa',

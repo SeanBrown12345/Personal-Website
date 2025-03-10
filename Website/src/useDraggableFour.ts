@@ -1,7 +1,9 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useDraggableFour = () => {
-  const [position4, setPosition] = useState({ x: 70, y: 70 });
+  const initx = window.innerWidth < 500 ? 0 : 70;
+  const inity = window.innerWidth < 500 ? 0 : 70;
+  const [position4, setPosition] = useState({ x: initx, y: inity });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const handleRef4 = useRef<HTMLDivElement | null>(null);

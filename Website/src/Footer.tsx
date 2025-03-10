@@ -59,8 +59,8 @@ const StyledLabel = styled("div")<{windowWidth : number}>(({windowWidth }) => ({
   boxShadow: "inset 1px 1px grey",
   backgroundImage:
     "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2M8cODAf3t7ewbG/////z948CADAFuqCj64BtLKAAAAAElFTkSuQmCC)",
-  padding: windowWidth < 1100 ? "0px 3.5vw" : "0px 90px",
-  fontSize: windowWidth < 1100 ? "3.5vw" : "25px",
+  padding: `0px clamp(3.5vw, 3.5vw, 90px)`,
+  fontSize: `clamp(16px, 3.5vw, 25px)`,
   fontWeight: "bold",
 }));
 
@@ -82,19 +82,12 @@ const Seperator = styled('div')({
   marginLeft: '10px',
 })
 
-function Footer() {
+interface WindowProps {
+  windowWidth: number;
+}
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
+function Footer({ windowWidth}: WindowProps) {
   const [currentTime, setCurrentTime] = useState('12:52 p.m.');
-
-
   const fetchTime = useCallback(async () => {
     try {
       const response = await fetch('http://worldtimeapi.org/api/timezone/Etc/UTC')

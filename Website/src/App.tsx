@@ -2,11 +2,12 @@ import './App.css'
 import Footer from './Footer'
 import { styled } from '@mui/material/styles'
 import Window from './Window'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useDraggable from './useDraggable'
 import useDraggable2 from './useDraggableTwo'
 import useDraggableThree from './useDraggableThree'
 import useDraggableFour from './useDraggableFour'
+
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',
@@ -100,6 +101,14 @@ function App() {
   const { position2, handleRef2 } = useDraggable2();
   const { position3, handleRef3 } = useDraggableThree();
   const { position4, handleRef4 } = useDraggableFour();
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
   return ( 
     <>
@@ -190,7 +199,7 @@ function App() {
         </CenteredWindowContainer>
       </ApplicationContainer>
       <div style={{zIndex: highestZIndex + 2}}>
-        <Footer/>
+        <Footer windowWidth={windowWidth}/>
       </div>
       
     </>
@@ -198,3 +207,4 @@ function App() {
 }
 
 export default App
+
