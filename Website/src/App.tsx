@@ -199,7 +199,7 @@ function App() {
         </CenteredWindowContainer>
       </ApplicationContainer>
       <div style={{zIndex: highestZIndex + 2}}>
-        <Footer windowWidth={windowWidth}/>
+        <Footer/>
       </div>
       
     </>
