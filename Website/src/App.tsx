@@ -2,7 +2,7 @@ import './App.css'
 import Footer from './Footer'
 import { styled } from '@mui/material/styles'
 import Window from './Window'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import useDraggable from './useDraggable'
 import useDraggable2 from './useDraggableTwo'
 import useDraggableThree from './useDraggableThree'
@@ -102,14 +102,6 @@ function App() {
   const { position3, handleRef3 } = useDraggableThree();
   const { position4, handleRef4 } = useDraggableFour();
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setWindowWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-  
   return ( 
     <>
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
