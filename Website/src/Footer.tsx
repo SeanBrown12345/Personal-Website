@@ -52,7 +52,7 @@ const LeftContainer = styled('div')({
   alignItems: 'center',
 })
 
-const StyledLabel = styled("div")<{windowWidth : number}>(({windowWidth }) => ({
+const StyledLabel = styled("div")({
   float: "left",
   borderTop: "1px solid #000",
   borderLeft: "1px solid #000",
@@ -62,7 +62,7 @@ const StyledLabel = styled("div")<{windowWidth : number}>(({windowWidth }) => ({
   padding: `0px clamp(3.5vw, 3.5vw, 90px)`,
   fontSize: `clamp(16px, 3.5vw, 25px)`,
   fontWeight: "bold",
-}));
+})
 
 const TimeLabel = styled('div')({
   textAlign: 'center', 
@@ -82,11 +82,7 @@ const Seperator = styled('div')({
   marginLeft: '10px',
 })
 
-interface WindowProps {
-  windowWidth: number;
-}
-
-function Footer({ windowWidth}: WindowProps) {
+function Footer() {
   const [currentTime, setCurrentTime] = useState('12:52 p.m.');
   const fetchTime = useCallback(async () => {
     try {
@@ -125,7 +121,7 @@ function Footer({ windowWidth}: WindowProps) {
             <StyledFa src="https://cdn.freebiesupply.com/logos/large/2x/github-icon-1-logo-black-and-white.png"/>
           </ImageContainer>
         </LeftContainer>
-        <StyledLabel windowWidth={windowWidth}>Hello... I'm Sean Brown </StyledLabel>
+        <StyledLabel>Hello... I'm Sean Brown </StyledLabel>
         <TimeLabel>{currentTime}</TimeLabel>
       </HeaderContainer>
 
