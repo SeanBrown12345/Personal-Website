@@ -12,14 +12,16 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #008080;
-    justify-content: 'space-between';
+    justify-content: space-between;
     font-family: myFont;
     background-image: url('/background3.png');
     overflow: hidden;
-    justify-content: space-between;
+    height: 100vh;
 }
-  #root {
+
+#root {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    height: 100%;
 }

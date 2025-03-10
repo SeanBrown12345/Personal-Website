@@ -55,6 +55,7 @@ const SkillContainer = styled('div')({
   marginTop: '10px',
   width: '100%',
   overflow: 'revert',
+  flexWrap: 'wrap',
 })
 
 const SkillsLabel = styled('div')({
@@ -139,11 +140,8 @@ function About() {
           <SkillContainer>   
           <SkillsLabel>React</SkillsLabel><SkillsLabel>Python</SkillsLabel><SkillsLabel>Java</SkillsLabel><SkillsLabel>C++</SkillsLabel><SkillsLabel>C</SkillsLabel><SkillsLabel>SQL</SkillsLabel>
           <SkillsLabel>Rust</SkillsLabel><SkillsLabel>Haskell</SkillsLabel><SkillsLabel>Git</SkillsLabel><SkillsLabel>GoLang</SkillsLabel><SkillsLabel>Javascript</SkillsLabel>
-          </SkillContainer>
-          <SkillContainer>   
           <SkillsLabel>Typescript</SkillsLabel><SkillsLabel>MatLab</SkillsLabel><SkillsLabel>HTML</SkillsLabel>
           </SkillContainer>
-
           <StyledHeader>More About Me</StyledHeader>
           
           <div style={{fontWeight: 'bold', marginTop: '10px'}}>Some of my hobbies and interests outside of Tech include:</div>

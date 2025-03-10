@@ -30,7 +30,6 @@ const ImageContainer = styled('a')({
   padding: '5px',
   boxShadow: 'outset 2px 3px grey',
   border: '2px outset black',
-  
   '&:hover': {
     boxShadow: 'inset 2px 2px grey',
     border: '2px solid gray',
