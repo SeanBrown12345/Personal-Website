@@ -39,13 +39,14 @@ const StyledIcon = styled('img')({
   height: '45px',
 })
 
-const ApplicationContainer = styled('div')({
+const ApplicationContainer = styled('div')<{ isPc: boolean }>(({ isPc }) => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: '50px',
+  gap: isPc ? '50px' : '20px',
   flexGrow: 1,
   padding: '20px',
-})
+}));
+
 const CenteredWindowContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
@@ -123,7 +124,7 @@ function App() {
     <PhoneWrapper isPc = {isPc}>
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
       
-      <ApplicationContainer>
+      <ApplicationContainer isPc = {isPc}>
         <IconContainer isActive={projectWindow} onClick={() => openWindowHandler('Projects')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"/>
           <StyledLabel>Projects</StyledLabel>

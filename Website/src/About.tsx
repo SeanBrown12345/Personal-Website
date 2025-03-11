@@ -17,7 +17,8 @@ const WindowContainer = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     backgroundColor: '#7a7b7d',
-    height: 'fit-content', // Adjust height as needed
+    height: 'fit-content',
+    maxHeight: '100vh', // Adjust height as needed
 })
 
 const TopContainer = styled('div')({
@@ -30,6 +31,7 @@ const TopContainer = styled('div')({
     padding: '10px',
     border: '2px ridge #000', 
     height: '600px',
+    maxHeight: '100vh',
     overflow: 'auto',
 })
 
