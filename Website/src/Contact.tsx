@@ -4,9 +4,9 @@ import { styled } from '@mui/material/styles'
 const WindowContainer = styled('div')({
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: '#c0c0c0',
     padding: '2px',
     paddingBottom: '5px',
+    width: '100%',
 })
 
 const TopContainer = styled('div')({
@@ -44,9 +44,8 @@ const StyledButton = styled('a')({
   const ButtonContainer = styled('div')({
     display: 'flex',
     flexDirection: 'row',
-    
     justifyContent: 'center',
-    gap: '150px',
+    gap: '10vw',
   })
 
   const StyledFa = styled('img')({

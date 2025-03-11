@@ -2,7 +2,7 @@ import './App.css'
 import Footer from './Footer'
 import { styled } from '@mui/material/styles'
 import Window from './Window'
-import { useState} from 'react'
+import { useEffect, useState} from 'react'
 import useDraggable from './useDraggable'
 import useDraggable2 from './useDraggableTwo'
 import useDraggableThree from './useDraggableThree'
@@ -75,7 +75,17 @@ function App() {
   const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1, contact: 1 });
   const [highestZIndex, setHighestZIndex] = useState(1);
 
-  const isPc = window.innerWidth < 500 ? false : true;
+  const [isPc, setIsPc] = useState(window.innerWidth < 500 ? false : true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsPc(window.innerWidth < 500 ? false : true);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
 
   const openWindowHandler = (label: string) => {
@@ -118,6 +128,9 @@ function App() {
   const { position2, handleRef2 } = useDraggable2();
   const { position3, handleRef3 } = useDraggableThree();
   const { position4, handleRef4 } = useDraggableFour();
+
+
+  
 
   return ( 
     <>
