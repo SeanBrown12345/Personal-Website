@@ -42,7 +42,6 @@ const StyledIcon = styled('img')({
 const ApplicationContainer = styled('div')({
   display: 'flex',
   flexDirection: 'row',
-  alignItems: 'space-between',
   gap: '50px',
   flexGrow: 1,
   padding: '20px',
@@ -51,7 +50,21 @@ const CenteredWindowContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  width:'0',
+  height:'0'
 })
+
+interface PhoneWrapperProps {
+  isPc: boolean;
+}
+
+const PhoneWrapper = styled('div')<PhoneWrapperProps>(({ isPc }) => ({
+  display: isPc ? 'block' : 'flex',
+  flexDirection: isPc ? 'row' : 'column',
+  alignContent: isPc ? 'flex-start' : 'center',
+  alignItems: isPc ? 'flex-start' : 'center',
+  height: '100%',
+}));
 
 function App() {
   const [projectWindow, setProjectWindow] = useState(false);
@@ -60,6 +73,9 @@ function App() {
   const [contactWindow, setContactWindow] = useState(false);
   const [zIndex, setZIndex] = useState({ projects: 1, resume: 1, about: 1, contact: 1 });
   const [highestZIndex, setHighestZIndex] = useState(1);
+
+  const isPc = window.innerWidth < 500 ? false : true;
+
 
   const openWindowHandler = (label: string) => {
     if(label === 'Projects'){
@@ -104,6 +120,7 @@ function App() {
 
   return ( 
     <>
+    <PhoneWrapper isPc = {isPc}>
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
       
       <ApplicationContainer>
@@ -123,7 +140,8 @@ function App() {
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/modem-2.png"/>
           <StyledLabel>Contact</StyledLabel>
         </IconContainer>
-        <CenteredWindowContainer>
+        </ApplicationContainer>
+        <CenteredWindowContainer >
           {projectWindow && (
             <div
               style={{
@@ -189,11 +207,12 @@ function App() {
             </div>
           )}
         </CenteredWindowContainer>
-      </ApplicationContainer>
+      </PhoneWrapper>
+      {isPc &&  
       <div style={{zIndex: highestZIndex + 2}}>
         <Footer/>
-      </div>
-      
+      </div>}
+    
     </>
   )
 }

@@ -9,9 +9,8 @@ body {
     min-height: 100vh;
     margin: 0;
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: #008080;
+    background-color: #5c7d9c;
     justify-content: space-between;
     font-family: myFont;
     background-image: url('/background3.png');

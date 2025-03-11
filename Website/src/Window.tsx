@@ -28,6 +28,7 @@ const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowPr
       alignItems: 'center',
       backgroundColor: '#c3c3c3',
       height: 'fit-content',
+      maxHeight: '100vh',
       width: `clamp(300px, 100vw, ${getMaxWidth()})`,
       border: '2px solid gray',
       fontFamily: 'Courier New, monospace',
