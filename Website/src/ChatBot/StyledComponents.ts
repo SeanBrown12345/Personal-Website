@@ -45,9 +45,9 @@ export const SendButton = styled('div')({
     borderRadius: '5px',
     height: '34px',
     width: '34px',
+    border: '2px solid transparent',  
     '&:hover': {
-        backgroundColor: '#FFF',
-        color: 'black',
+        border: '2px solid white',  
     },
 });
 export const CenteredInputContainer = styled('div')({
@@ -78,6 +78,13 @@ export const StyledInput = styled('input')({
 export const StyledFa = styled('img')({
   width: 'auto',
   height: '25px',
+  alignItems: 'center',
+  cursor: 'pointer',
+})
+
+export const StyledFa2 = styled('img')({
+  width: 'auto',
+  height: '15px',
   alignItems: 'center',
   cursor: 'pointer',
 })

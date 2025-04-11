@@ -19,8 +19,8 @@ import {
   ModalContainer,
   CloseButton,
   SendButton,
+  StyledFa2,
 } from "./StyledComponents";
-import SendIcon from "@mui/icons-material/Send";
 
 type Message = {
   text: string;
@@ -162,7 +162,7 @@ function ChatBot() {
                 }}
               />
               <SendButton style={{ cursor: "pointer" }} onClick={sendMessage}>
-              <SendIcon/>
+              <StyledFa2 src="https://cdn.pixabay.com/photo/2015/12/07/22/53/paper-planes-1081560_1280.png" />
               </SendButton>
             </div>
           </CenteredInputContainer>
