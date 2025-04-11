@@ -8,8 +8,8 @@ const WindowContainer = styled('div')({
     height: '700px',
     alignItems: 'center', 
     justifyContent: 'center',
-    overflow: 'auto',
-})
+    overflowY: 'auto',
+  })
 
 const TopContainer = styled('div')({
     flexDirection: 'row',
@@ -19,7 +19,9 @@ const TopContainer = styled('div')({
     padding: '10px',
     borderStyle: 'ridge',
     height: 'fit-content',
-    overflow: 'auto',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+
 })
 
 const StyledIcon = styled('img')({

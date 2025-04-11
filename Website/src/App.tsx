@@ -7,6 +7,9 @@ import useDraggable from './useDraggable'
 import useDraggable2 from './useDraggableTwo'
 import useDraggableThree from './useDraggableThree'
 import useDraggableFour from './useDraggableFour'
+import ChatBot from './ChatBot/ChatBot'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
@@ -42,9 +45,14 @@ const StyledIcon = styled('img')({
 const ApplicationContainer = styled('div')<{ isPc: boolean }>(({ isPc }) => ({
   display: 'flex',
   flexDirection: 'row',
-  gap: isPc ? '50px' : '20px',
+  gap: isPc ? '50px' : '',
+  width: isPc ? '' : '100%',
+  justifyContent: isPc ? '' : 'space-between',
+
   flexGrow: 1,
-  padding: '20px',
+  paddingTop: '20px',
+  paddingLeft: '40px',
+  paddingRight: '40px',
 }));
 
 const CenteredWindowContainer = styled('div')({
@@ -133,10 +141,14 @@ function App() {
   
 
   return ( 
+    <Router>
+      <Routes>
+      <Route
+          path="/"
+          element={
     <>
     <PhoneWrapper isPc = {isPc}>
       <script src="https://kit.fontawesome.com/dedf0c903a.js"></script>
-      
       <ApplicationContainer isPc = {isPc}>
         <IconContainer isActive={projectWindow} onClick={() => openWindowHandler('Projects')}>
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/directory_closed_cool-0.png"/>
@@ -228,8 +240,12 @@ function App() {
       </div>}
     
     </>
-  )
-}
+     }
+     />
+    <Route path="/chatbot" element={<ChatBot />} />
+      </Routes>
+    </Router>
+)}
 
 export default App
 

@@ -74,7 +74,6 @@ function About() {
   return ( 
     <>
       <WindowContainer>
-      
         
         <TopContainer>
           <div>

@@ -4,6 +4,7 @@ import About from './About'
 import Resume from './Resume'
 import Projects from './Projects';
 import Contact from './Contact';
+import ChatBot from './ChatBot/ChatBot';
 
 interface StyledWindowProps {
     label: string;
@@ -17,6 +18,9 @@ const StyledWindow = styled('div')<StyledWindowProps>(({ label }: StyledWindowPr
           return '700px';
         case 'Contact':
           return '600px';
+        case 'ChatBot':
+          return '400px';
+          
         default:
           return '500px';
       }
@@ -118,6 +122,7 @@ function Window({ label, image, closeWindow, handleRef }: WindowProps) {
         {label === 'Resume' ? <Resume/> : null}
         {label === 'Projects' ? <Projects/> : null}
         {label === 'Contact' ? <Contact/> : null}
+        {label === 'ChatBot' ? <ChatBot/> : null}
       </StyledWindow>
   )
 }
