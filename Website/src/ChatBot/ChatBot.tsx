@@ -20,6 +20,7 @@ import {
   CloseButton,
   SendButton,
   StyledFa2,
+  MessageSuggestionsContainer,
 } from "./StyledComponents";
 
 type Message = {
@@ -33,7 +34,12 @@ function ChatBot() {
     { text: initMessage, isUser: false },
   ]);
   const [inputValue, setInputValue] = useState<string>("");
-  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const [suggestedMessages, setSuggestedMessages] = useState<string[]>([
+    "Tell me about yourself",
+    "What are your skills?",
+    "What is your work experience.",
+  ]);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -41,7 +47,12 @@ function ChatBot() {
     setIsModalVisible(!isModalVisible);
   };
 
-  console.log(import.meta.env.VITE_OPENAI_API_KEY);
+  const handleSuggestionClick = (suggestion: string) => {
+    setInputValue(suggestion);
+    setSuggestedMessages((prev) =>
+      prev.filter((message) => message !== suggestion)
+    );
+  };
 
   const fetchResponse = async (userMessage: string) => {
     setLoading(true);
@@ -65,7 +76,7 @@ function ChatBot() {
         ],
       });
 
-  const botReply =
+      const botReply =
         response.choices[0]?.message?.content ||
         "Sorry, I could not process that.";
       setMessages((prevMessages) => [
@@ -142,6 +153,27 @@ function ChatBot() {
               </div>
             )}
           </ChatContainer>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px",
+              backgroundColor: '#2d0922',
+              height: 'fit-content',
+              width: '100%',
+              padding: '5px',
+              boxSizing: 'border-box',
+            }}
+          >
+            {suggestedMessages.map((suggestion, index) => (
+              <MessageSuggestionsContainer
+                key={index}
+                onClick={() => handleSuggestionClick(suggestion)}
+              >
+                {suggestion}
+              </MessageSuggestionsContainer>
+            ))}
+          </div>
           <CenteredInputContainer>
             <div
               style={{
@@ -150,7 +182,8 @@ function ChatBot() {
                 alignItems: "center",
                 width: "100%",
                 gap: "5px",
-              }}>
+              }}
+            >
               <StyledLabel style={{ color: "green" }}>User@Input: </StyledLabel>
               <StyledInput
                 value={inputValue}
@@ -162,7 +195,7 @@ function ChatBot() {
                 }}
               />
               <SendButton style={{ cursor: "pointer" }} onClick={sendMessage}>
-              <StyledFa2 src="https://cdn.pixabay.com/photo/2015/12/07/22/53/paper-planes-1081560_1280.png" />
+                <StyledFa2 src="https://cdn.pixabay.com/photo/2015/12/07/22/53/paper-planes-1081560_1280.png" />
               </SendButton>
             </div>
           </CenteredInputContainer>

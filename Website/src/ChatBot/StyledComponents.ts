@@ -148,6 +148,36 @@ export const StyledButton = styled('a')({
   },
 });
 
+export const MessageSuggestionsContainer = styled('a')({
+  fontFamily: 'monospace',
+  display: 'flex', 
+  alignItems: 'center', 
+  justifyContent: 'center', 
+  backgroundColor: '#AEA79F',
+  fontSize: '15px',
+  borderRadius: '.5rem',
+  height: '40px',
+  boxSizing: 'border-box',
+  color: '#111827',
+  textDecoration: 'none',
+  maxWidth: '200px',
+  fontWeight: 600,
+  padding: '5px',
+  alignContent: 'center',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: 'rgb(249,250,251)',
+  },
+  '&:focus': {
+    outline: '2px solid transparent',
+    outlineOffset: '2px',
+  },
+  '&:focus-visible': {
+    boxShadow: 'none',
+  },
+});
+
 export const StyledLabel = styled('div')({
   fontSize: '17px',
   textAlign: 'center',
