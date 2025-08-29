@@ -28,15 +28,16 @@ const ImageContainer = styled('a')({
   alignItems: 'center',
   height: '100%',
   padding: '5px',
-  boxShadow: 'outset 2px 3px grey',
-  border: '2px outset black',
+  boxShadow: 'outset 1px 1px grey',
+  border: '2px solid gray',
   '&:hover': {
-    boxShadow: 'inset 2px 2px grey',
+    boxShadow: 'inset 1px 1px grey',
     border: '2px solid gray',
   },
   color: '#010081  ',
   imageRendering: 'pixelated',
 })
+
 const StyledFa = styled('img')({
   width: 'auto',
   height: '25px',
