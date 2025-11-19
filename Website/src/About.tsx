@@ -30,7 +30,7 @@ const TopContainer = styled('div')({
     backgroundColor: '#c3c3c3',
     padding: '10px',
     border: '2px ridge #000', 
-    height: '600px',
+    height: '500px',
     maxHeight: '100vh',
     overflow: 'auto',
 })

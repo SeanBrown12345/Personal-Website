@@ -5,7 +5,7 @@ const WindowContainer = styled('div')({
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: '#c3c3c3',
-    height: '700px',
+    height: '550px',
     alignItems: 'center', 
     justifyContent: 'center',
     overflowY: 'auto',
