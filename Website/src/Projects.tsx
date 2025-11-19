@@ -24,6 +24,11 @@ const StyledIcon = styled('img')({
     height: '60px',
 });
 
+const StyledChessIcon = styled('img')({
+    width: '100px',
+    height: '60px',
+});
+
 const StyledLabel = styled('div')({
     fontSize: '14px',
     textAlign: 'center',
@@ -33,12 +38,13 @@ const StyledLabel = styled('div')({
 const ButtonContainer = styled('div')({
     display: 'flex',
     width: '100%',
-    flexDirection: 'row',
-    paddingLeft: '50px',
+    flexDirection: 'column',
+    paddingLeft: '20px',
     paddingRight: '20px',
     paddingTop: '20px',
     paddingBottom: '10px',
     boxSizing: 'border-box',
+    gap: '20px',
 });
 
 const IconButton = styled('a')({
@@ -52,7 +58,7 @@ const IconButton = styled('a')({
   boxShadow: 'outset 2px 2px grey',
   border: '2px outset grey',
   textAlign: 'center',
-  width: '100px',
+  width: '100%',
   height: '100px',
   fontWeight: 'bold',
   textDecoration: 'none',
@@ -76,6 +82,14 @@ function Projects() {
                     <StyledLabel>SeanAI</StyledLabel>
                 </IconButton>
                 </a>
+              
+               <IconButton href="https://github.com/SeanBrown12345/ChessEngineML"
+                target="_blank"
+                rel="noopener noreferrer">
+                    <StyledChessIcon src='/chess.png' />
+                    <StyledLabel>Chess Elo Guesser</StyledLabel>
+                </IconButton>
+
               </ButtonContainer>
 
                 <TopContainer>
