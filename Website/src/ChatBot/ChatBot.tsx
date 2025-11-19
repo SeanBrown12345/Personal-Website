@@ -204,7 +204,7 @@ function ChatBot() {
       <ButtonContainer>
         <StyledButton onClick={toggleModal}>About</StyledButton>
         <StyledButton
-          href="https://github.com/SeanBrown12345"
+          href="https://github.com/SeanBrown12345/SeanBrownChatBot"
           target="_blank"
           rel="noopener noreferrer"
         >
