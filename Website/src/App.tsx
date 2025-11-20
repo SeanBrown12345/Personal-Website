@@ -10,8 +10,6 @@ import useDraggableFour from './useDraggableFour'
 import ChatBot from './ChatBot/ChatBot'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-
-
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',
   flexDirection: 'column',
@@ -51,8 +49,8 @@ const ApplicationContainer = styled('div')<{ isPc: boolean }>(({ isPc }) => ({
 
   flexGrow: 1,
   paddingTop: '20px',
-  paddingLeft: '40px',
-  paddingRight: '40px',
+  paddingLeft: isPc ? '40px': '',
+  paddingRight: isPc ? '40px': '',
 }));
 
 const CenteredWindowContainer = styled('div')({
@@ -136,10 +134,6 @@ function App() {
   const { position2, handleRef2 } = useDraggable2();
   const { position3, handleRef3 } = useDraggableThree();
   const { position4, handleRef4 } = useDraggableFour();
-
-
-  
-
   return ( 
     <Router>
       <Routes>
