@@ -63,7 +63,7 @@ function Contact() {
     <>
       <WindowContainer>
         <TopContainer>
-            <div> &gt;&gt; Email: sean_brown_3@sfu.ca</div>
+            <div> &gt;&gt; Email: sbsdesk@gmail.com</div>
             <div> &gt;&gt; Phone No: Contact me!</div>
             <div> &gt;&gt; Location: Vancouver, Canada</div>
             <div> &gt;&gt; </div>

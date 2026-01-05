@@ -67,12 +67,6 @@ function Resume() {
             width="100%" 
             style={{ border: '2px solid #000', marginBottom: '10px' }}
           />
-          <img 
-            src="/resume1.png" 
-            alt="Resume Page 2" 
-            width="100%" 
-            style={{ border: '2px solid #000' }}
-          />
         </TopContainer>
       </WindowContainer>
     </>
