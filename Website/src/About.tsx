@@ -79,7 +79,7 @@ function About() {
           <div>
             <StyledIcon src='/portrait.png'/>
             <div>
-            Hi! I'm Sean Brown, and I am a Data Scientist/Software Engineer with a focus on Machine Learning and AI. I completed my undergraduate degree in Computer Science at Simon Fraser University and am currently enrolled in the Master of Data Science (MDSc) program at the University of British Columbia. My focus extends beyond the underlying technology behind AI to its implications across various industries and its potential for innovation. In my graduate studies, I aim to deepen my understanding of data science and machine learning while exploring areas for potential application and improvement.<br></br>
+            Hi! I'm Sean Brown, and I am a Data Scientist/Software Engineer with a focus on Machine Learning and AI. I completed my undergraduate degree in Computer Science at Simon Fraser University and am currently enrolled in the Master of Data Science (MDS) program at the University of British Columbia. My focus extends beyond the underlying technology behind AI to its implications across various industries and its potential for innovation. In my graduate studies, I aim to deepen my understanding of data science and machine learning while exploring areas for potential application and improvement.<br></br>
             </div>
           </div>
               

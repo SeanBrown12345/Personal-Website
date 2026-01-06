@@ -56,7 +56,7 @@ function Resume() {
   return ( 
     <>
       <WindowContainer>
-        <DownloadButton href="/resume.pdf" download="resume.pdf">
+        <DownloadButton href="/Sean_Brown_Resume.pdf" download="Sean_Brown_Resume.pdf">
           <StyledIcon src="https://win98icons.alexmeub.com/icons/png/mouse-5.png"/>
           Download My Resume 
         </DownloadButton>
