@@ -1,6 +1,4 @@
-
-  {
-    "rootDirectory": "Website",
+{
     "rewrites": [
       { "source": "/(.*)", "destination": "/" }
     ]
