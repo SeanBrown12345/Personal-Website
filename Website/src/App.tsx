@@ -9,6 +9,7 @@ import useDraggableThree from './useDraggableThree'
 import useDraggableFour from './useDraggableFour'
 import ChatBot from './ChatBot/ChatBot'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react';
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',
@@ -136,6 +137,7 @@ function App() {
   const { position4, handleRef4 } = useDraggableFour();
   return ( 
     <Router>
+      <Analytics />
       <Routes>
       <Route
           path="/"
