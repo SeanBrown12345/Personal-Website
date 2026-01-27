@@ -1,7 +1,7 @@
 import MessageBubble from "./MessageBubble";
 import { useRef, useEffect, useState } from "react";
-import OpenAI from "openai";
-import { systemMessage } from "./systemmessage";
+
+
 import {
   ChatContainer,
   Label,
@@ -27,9 +27,11 @@ type Message = {
   text: string;
   isUser: boolean;
 };
+
+
 function ChatBot() {
-  const initMessage =
-    "Hi! I'm SeanBot — here to answer any questions about Sean. Ask me anything! I'm still learning, so my answers may not be perfect.";
+
+  const initMessage = "Hi! I'm SeanBot — here to answer any questions about Sean. Ask me anything! I'm still learning, so my answers may not be perfect.";
   const [messages, setMessages] = useState<Message[]>([
     { text: initMessage, isUser: false },
   ]);
@@ -57,34 +59,18 @@ function ChatBot() {
   const fetchResponse = async (userMessage: string) => {
     setLoading(true);
     try {
-      const openAiClient = new OpenAI({
-        apiKey: import.meta.env.VITE_OPENAI_API_KEY || "",
-        dangerouslyAllowBrowser: true,
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage }),
       });
-
-      const response = await openAiClient.chat.completions.create({
-        model: "ft:gpt-4o-2024-08-06:personal:seanbot:BIjW4IEM",
-        messages: [
-          {
-            role: "system",
-            content: systemMessage,
-          },
-          {
-            role: "user",
-            content: userMessage,
-          },
-        ],
-      });
-
-      const botReply =
-        response.choices[0]?.message?.content ||
-        "Sorry, I could not process that.";
+      const data = await response.json();
+      const botReply = data.choices?.[0]?.message?.content || "Sorry, I could not process that.";
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: botReply, isUser: false },
       ]);
     } catch (error) {
-      console.error("Error fetching response:", error);
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: "Error: Unable to fetch response.", isUser: false },
