@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { systemMessage } from "../src/ChatBot/systemmessage";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') {
@@ -22,7 +23,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify({
         model: 'ft:gpt-4o-2024-08-06:personal:seanbot:BIjW4IEM',
         messages: [
-          { role: 'system', content: "You are SeanBot, a helpful AI assistant." }, // Replace with your system message if needed
+          { role: 'system', content: systemMessage },
           { role: 'user', content: message },
         ],
       }),
