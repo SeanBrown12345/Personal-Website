@@ -1,8 +1,8 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useDraggableThree = () => {
-  const initx = window.innerWidth < 500 ? 0 : 80;
-  const inity = window.innerWidth < 500 ? 0 : 80;
+  const initx = window.innerWidth < 500 ? 0 : 300;
+  const inity = window.innerWidth < 500 ? 0 : 10;
   const [position3, setPosition] = useState({ x: initx, y: inity });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });

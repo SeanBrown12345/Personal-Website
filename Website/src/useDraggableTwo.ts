@@ -1,8 +1,8 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 
 const useDraggableTwo = () => {
-  const initx = window.innerWidth < 500 ? 0 : 300;
-  const inity = window.innerWidth < 500 ? 0 : 40;
+  const initx = window.innerWidth < 500 ? 0 : 200;
+  const inity = window.innerWidth < 500 ? 0 : 10;
   const [position2, setPosition] = useState({ x: initx, y: inity });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
