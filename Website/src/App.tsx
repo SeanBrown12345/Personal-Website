@@ -10,7 +10,7 @@ import useDraggableFour from './useDraggableFour'
 import ChatBot from './ChatBot/ChatBot'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react';
-import BitcoinVolatility from './Bitcoin/bitcoin'
+import BitcoinVolatility from './Bitcoin/Bitcoin'
 
 const IconContainer = styled('div')<{ isActive: boolean }>(({ isActive }) => ({ 
   display: 'flex',

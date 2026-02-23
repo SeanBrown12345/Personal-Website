@@ -12,13 +12,6 @@ const WindowContainer = styled('div')({
     paddingBottom: '20px',
 });
 
-const TopContainer = styled('div')({
-    flexDirection: 'column',
-    gap: '10px',
-    height: 'fit-content',
-    padding: '10px',
-    alignContent: 'center',
-});
 
 const RowButtonContainer = styled('div')({
     display: 'flex',

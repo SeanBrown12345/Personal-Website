@@ -124,7 +124,6 @@ export default function BitcoinVolatility() {
             }
           ]}
           layout={{
-            template: "plotly_dark",
             hovermode: "x unified",
             paper_bgcolor: "#0f172a",
             plot_bgcolor: "#0f172a",
