@@ -5,6 +5,7 @@ type BitcoinVolatilityData = {
   last_week: { date: string; vol: number }[];
   forecast: { date: string; vol: number }[];
   as_of_date: string;
+  generated_at_utc: string;
 };
 
 export default function BitcoinVolatility() {
@@ -21,7 +22,8 @@ export default function BitcoinVolatility() {
 
   if (!data) return null;
 
-  const lastUpdated = data.as_of_date;
+  const lastUpdated = new Date(data.generated_at_utc);
+
 
   const realizedX = data.last_week.map(d => d.date);
   const realizedY = data.last_week.map(d => d.vol);
@@ -146,7 +148,7 @@ export default function BitcoinVolatility() {
         />
       </div>
       <p style={{ color: "#9ca3af", marginTop: "8px" }}>
-        Updated {lastUpdated}
+        Updated {lastUpdated.toLocaleDateString()}
       </p>
 
       <section
