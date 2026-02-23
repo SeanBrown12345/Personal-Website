@@ -11,7 +11,9 @@
     "@react-pdf-viewer/default-layout": "^3.12.0",
     "@vercel/node": "^5.5.28",
     "openai": "^4.91.1",
+    "plotly.js": "^3.4.0",
     "react": "^19.0.0",
-    "react-draggable": "^4.4.6"
+    "react-draggable": "^4.4.6",
+    "react-plotly.js": "^2.6.0"
   }
 }

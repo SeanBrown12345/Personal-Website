@@ -9,6 +9,7 @@ const WindowContainer = styled('div')({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '100%',
+    paddingBottom: '20px',
 });
 
 const TopContainer = styled('div')({
@@ -84,19 +85,36 @@ function Projects() {
         <>
             <WindowContainer>
               <ButtonContainer>
-              <a href="/chatbot" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
 
               <RowButtonContainer >
-                    <IconButton>
+                    <IconButton href="/chatbot" target="_blank" rel="noopener noreferrer">
                         <StyledIcon src='/ai.png' />
                         <StyledLabel>SeanAI</StyledLabel>
                     </IconButton>
 
-                     <IconButton href="https://github.com/SeanBrown12345/ml-salary-estimator"
+                    <IconButton href="/bitcoin" target="_blank" rel="noopener noreferrer">
+                        <StyledIcon src='https://upload.wikimedia.org/wikipedia/commons/4/46/Bitcoin.svg' />
+                        <StyledLabel>Bitcoin Volatility</StyledLabel>
+                    </IconButton>
+
+                     
+                    
+             </RowButtonContainer>
+
+             <RowButtonContainer>
+                
+                    <IconButton href="https://github.com/SeanBrown12345/ml-salary-estimator"
                         target="_blank"
                         rel="noopener noreferrer">
                         <StyledMoneyIcon src='/money.png' />
                         <StyledLabel>ML Salary Estimator</StyledLabel>
+                    </IconButton>
+
+                     <IconButton href="https://ubc-mds.github.io/DSCI_524_FileJanitor/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        <StyledMoneyIcon src='https://win98icons.alexmeub.com/icons/png/clean_drive-4.png' />
+                        <StyledLabel>FileJanitor Python Package</StyledLabel>
                     </IconButton>
                     
              </RowButtonContainer>
@@ -108,22 +126,16 @@ function Projects() {
                         <StyledChessIcon src='/chess.png' />
                         <StyledLabel>Chess Elo Guesser</StyledLabel>
                     </IconButton>
-                     <IconButton href="https://ubc-mds.github.io/DSCI_524_FileJanitor/"
+                     <IconButton href="https://seanbrown12345.github.io/BlogPost/"
                         target="_blank"
                         rel="noopener noreferrer">
-                        <StyledMoneyIcon src='https://win98icons.alexmeub.com/icons/png/clean_drive-4.png' />
-                        <StyledLabel>FileJanitor Python Package</StyledLabel>
+                        <StyledMoneyIcon src='https://www.shareicon.net/data/2015/12/17/688959_logo_512x512.png' />
+                        <StyledLabel>ML Blog</StyledLabel>
                     </IconButton>
                     
              </RowButtonContainer>
-            </a>
               </ButtonContainer>
 
-                <TopContainer>
-                    <img src='/loading.gif' alt="Loading" />
-                    <div>Loading Projects:</div>
-                    <div>Find more on my Github!</div>
-                </TopContainer>
             </WindowContainer>
         </>
     );
